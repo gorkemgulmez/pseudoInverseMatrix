@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.MatrixScreenController">
+   <children>
+      <Canvas fx:id="canvas" height="459.0" width="1172.0" />
+      <Separator prefWidth="200.0" />
+      <AnchorPane prefHeight="48.0" prefWidth="360.0">
+         <children>
+            <Button fx:id="ileri" layoutX="544.0" layoutY="11.0" mnemonicParsing="false" onAction="#ileri" prefHeight="25.0" prefWidth="82.0" text="Başla" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
