@@ -1,4 +1,4 @@
-package test;
+package matrix;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -109,7 +109,7 @@ public class MatrixScreenController {
 			drawText("Matris Transpozisyonu", canvas.getWidth()/2 -170, 100);
 			drawText("[A]ij = [B]ji", canvas.getWidth()/2 -300, 420);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 2) {
 			clearScreen();
 			//trans(a) * a
@@ -117,22 +117,22 @@ public class MatrixScreenController {
 			drawMatrix(canvas.getWidth()/2, canvas.getWidth()/2, matrix);
 			drawText("Transpose Matris * Matris", canvas.getWidth()/2 -150, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450); 
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450); 
 		}else if(iterator == 3) {
 			clearScreen();
 			//result
 			double[][] result = Matrix.multiplication(stringToDouble(trans),stringToDouble(matrix));
 			drawMatrix(0, canvas.getWidth(), doubleToString(result));
-			drawText("Sonuç", canvas.getWidth()/2 -50, 100);
-			drawText("Determinant sýfýr olusa matrisin tersi bulunamaz", canvas.getWidth()/2 -300, 420);
+			drawText("Sonuï¿½", canvas.getWidth()/2 -50, 100);
+			drawText("Determinant sï¿½fï¿½r olusa matrisin tersi bulunamaz", canvas.getWidth()/2 -300, 420);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 4) {
 			clearScreen();
 			//result)^-1 -> 
 			double det = Matrix.det(1,Matrix.multiplication(stringToDouble(trans),stringToDouble(matrix)));
 			if(det == 0) {
-				new AlertBox("Determinant Sýfýr Pseudo Inverse Bulunamaz");
+				new AlertBox("Determinant Sï¿½fï¿½r Pseudo Inverse Bulunamaz");
 				return ;
 			}
 			double[][] result = Matrix.squareInverse(Matrix.multiplication(stringToDouble(trans),stringToDouble(matrix)));
@@ -140,7 +140,7 @@ public class MatrixScreenController {
 			drawMatrix(0, canvas.getWidth(), squareI);
 			drawText("Kare Matrisin Tersi", canvas.getWidth()/2 -100, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 5) {
 			clearScreen();
 			//result * trans(a)
@@ -148,7 +148,7 @@ public class MatrixScreenController {
 			drawMatrix(canvas.getWidth()/2, canvas.getWidth()/2, trans);
 			drawText("Kare Matris * Transpose Matris", canvas.getWidth()/2 -150, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}
 		else if(iterator == 6) {
 			clearScreen();
@@ -156,9 +156,9 @@ public class MatrixScreenController {
 			double[][] resultD = Matrix.pseudoInverse(stringToDouble(matrix));
 			result = doubleToString(resultD);
 			drawMatrix(0, canvas.getWidth(), result);
-			drawText("Çözüm", canvas.getWidth()/2 -50, 100);
+			drawText("ï¿½ï¿½zï¿½m", canvas.getWidth()/2 -50, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}
 		iterator++;
 	}
@@ -173,7 +173,7 @@ public class MatrixScreenController {
 			drawMatrix(0, canvas.getWidth(), trans);
 			drawText("Matris Transpozisyonu", canvas.getWidth()/2 -170, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 2) {
 			clearScreen();
 			//a * trans(a)
@@ -181,22 +181,22 @@ public class MatrixScreenController {
 			drawMatrix(canvas.getWidth()/2, canvas.getWidth()/2, trans);
 			drawText("Matris * Transpose Matris", canvas.getWidth()/2 -150, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 3) {
 			clearScreen();
 			//result
 			double[][] result = Matrix.multiplication(stringToDouble(matrix), stringToDouble(trans));
 			drawMatrix(0, canvas.getWidth(), doubleToString(result));
-			drawText("Sonuç", canvas.getWidth()/2 -50, 100);
-			drawText("Determinant sýfýr olusa matrisin tersi bulunamaz", canvas.getWidth()/2 -300, 420);
+			drawText("Sonuï¿½", canvas.getWidth()/2 -50, 100);
+			drawText("Determinant sï¿½fï¿½r olusa matrisin tersi bulunamaz", canvas.getWidth()/2 -300, 420);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}else if(iterator == 4) {
 			clearScreen();
 			//result)^-1
 			double det = Matrix.det(1,Matrix.multiplication(stringToDouble(matrix),stringToDouble(trans)));
 			if(det == 0) {
-				new AlertBox("Determinant Sýfýr Pseudo Inverse Bulunamaz");
+				new AlertBox("Determinant Sï¿½fï¿½r Pseudo Inverse Bulunamaz");
 				return ;
 			}
 			double[][] result = Matrix.squareInverse(Matrix.multiplication(stringToDouble(matrix), stringToDouble(trans)));
@@ -204,7 +204,7 @@ public class MatrixScreenController {
 			drawMatrix(0, canvas.getWidth(), squareI);
 			drawText("Kare Matrisin Tersi", canvas.getWidth()/2 -100, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -250, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -250, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -250, 450);
 		}else if(iterator == 5) {
 			clearScreen();
 			//trans(a) * result
@@ -212,7 +212,7 @@ public class MatrixScreenController {
 			drawMatrix(canvas.getWidth()/2, canvas.getWidth()/2, squareI);
 			drawText("Kare Matris * Transpose Matris", canvas.getWidth()/2 -150, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}
 		else if(iterator == 6) {
 			clearScreen();
@@ -220,9 +220,9 @@ public class MatrixScreenController {
 			double[][] resultD = Matrix.pseudoInverse(stringToDouble(matrix));
 			result = doubleToString(resultD);
 			drawMatrix(0, canvas.getWidth(), result);
-			drawText("Çözüm", canvas.getWidth()/2 -50, 100);
+			drawText("ï¿½ï¿½zï¿½m", canvas.getWidth()/2 -50, 100);
 			drawText("Toplam: " + Matrix.topC, canvas.getWidth() -200, 420);
-			drawText("Çarpým: " + Matrix.carpC, canvas.getWidth() -200, 450);
+			drawText("ï¿½arpï¿½m: " + Matrix.carpC, canvas.getWidth() -200, 450);
 		}
 		iterator++;
 	}

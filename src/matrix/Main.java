@@ -1,4 +1,4 @@
-package test;
+package matrix;
 
 import java.io.IOException;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package test;
+package matrix;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
