@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AlertBox {
+class AlertBox {
 	
 	public AlertBox(String warning) {
 		VBox layout = new VBox();

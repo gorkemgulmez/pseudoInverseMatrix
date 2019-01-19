@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
+@SuppressWarnings("WeakerAccess")
 public class MatrixScreenController {
 
 	@FXML Canvas canvas;
@@ -31,8 +32,8 @@ public class MatrixScreenController {
 			}
 		}
 	}
-	
-	public void drawMatrix(double x, double width, String[][] mat) {
+
+	private void drawMatrix(double x, double width, String[][] mat) {
 		double line_height = 40,  line_width = 110;
 		double height = canvas.getHeight();
 		int col = mat[0].length, row = mat.length;
@@ -67,14 +68,14 @@ public class MatrixScreenController {
 		}
 	}
 	
-	public void drawText(String text, double x, double y) {
+	private void drawText(String text, double x, double y) {
 		Font font = new Font(25);
 		gc.setFont(font);
 		
 		gc.fillText(text, x, y);
 	}
 	
-	public void clearScreen() {
+	private void clearScreen() {
 		gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 	}
 	
@@ -98,7 +99,7 @@ public class MatrixScreenController {
 		}
 	}
 	
-	public void m() {
+	private void m() {
 		if(iterator==1) {
 			clearScreen();
 			//trans(a)
@@ -163,7 +164,7 @@ public class MatrixScreenController {
 		iterator++;
 	}
 	
-	public void n() {
+	private void n() {
 		if(iterator == 1) {
 			clearScreen();
 			//trans(a)
@@ -227,15 +228,15 @@ public class MatrixScreenController {
 		iterator++;
 	}
 	
-	public static double round(double number, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
+	private static double round(double number, int place) {
+	    if (place < 0) throw new IllegalArgumentException();
 
 	    BigDecimal bd = new BigDecimal(number);
-	    bd = bd.setScale(places, RoundingMode.HALF_UP);
+	    bd = bd.setScale(3, RoundingMode.HALF_UP);
 	    return bd.doubleValue();
 	}
 	
-	public double[][] stringToDouble(String[][] matrix) {
+	private double[][] stringToDouble(String[][] matrix) {
 		double[][] result = new double[matrix.length][matrix[0].length];
 		for(int i=0; i<matrix.length; i++) {
 			for(int j=0; j<matrix[0].length; j++) {
@@ -245,7 +246,7 @@ public class MatrixScreenController {
 		return result;
 	}
 	
-	public String[][] doubleToString(double[][] matrix) {
+	private String[][] doubleToString(double[][] matrix) {
 		String[][] result = new String[matrix.length][matrix[0].length];
 		for(int i=0; i<matrix.length; i++) {
 			for(int j=0; j<matrix[0].length; j++) {

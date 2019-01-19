@@ -1,6 +1,6 @@
 package matrix;
 
-public class Matrix {
+class Matrix {
 	
 	public static int topC =0, carpC=0;
 	
@@ -16,7 +16,7 @@ public class Matrix {
 		return result;
 	}
 	
-	public static double[][] multiplication(double matrix_1[][], double matrix_2[][]) {
+	public static double[][] multiplication(double[][] matrix_1, double[][] matrix_2) {
 		//[k][l] x [m][n] = [k][n]
 		int i, j, a;
 		double[][] result = new double[matrix_1.length][matrix_2[0].length];
@@ -127,7 +127,7 @@ public class Matrix {
 		return result;
 	}
 	
-	public static double[][] adjugate(double[][] matrix) {
+	private static double[][] adjugate(double[][] matrix) {
 		int length = matrix.length;
 		double[][] result = new double[length][length]; 
 		if (length == 1) {

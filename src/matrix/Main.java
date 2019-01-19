@@ -35,15 +35,15 @@ public class Main extends Application{
 	
 	@FXML Spinner<Integer> rowNumber;
 	@FXML Spinner<Integer> colNumber;
-	ObservableList<Integer> size = FXCollections.observableArrayList(1,2,3,4,5);
-	SpinnerValueFactory<Integer> rowList = new SpinnerValueFactory.ListSpinnerValueFactory<>(size);
-	SpinnerValueFactory<Integer> colList = new SpinnerValueFactory.ListSpinnerValueFactory<>(size);
+	private final ObservableList<Integer> size = FXCollections.observableArrayList(1,2,3,4,5);
+	private final SpinnerValueFactory<Integer> rowList = new SpinnerValueFactory.ListSpinnerValueFactory<>(size);
+	private final SpinnerValueFactory<Integer> colList = new SpinnerValueFactory.ListSpinnerValueFactory<>(size);
 	
 	@FXML Button compute;
 	@FXML Button random;
 	@FXML Button edit;
 	
-	String[][] labels = new String[5][5];
+	private final String[][] labels = new String[5][5];
 	
 	public void initialize() {
 		rowNumber.setValueFactory(rowList);
@@ -69,7 +69,7 @@ public class Main extends Application{
 		});
 	}
 	
-	public void drawMatrix() {
+	private void drawMatrix() {
 		int row = rowNumber.getValue(), col = colNumber.getValue();
 		double line_height = 40,  line_width = 60;
 		double width = canvas.getWidth(),  height = canvas.getHeight();
@@ -122,10 +122,8 @@ public class Main extends Application{
 		}catch(Exception e) {
 			return false;
 		}
-		
-		if(num>=0 && num<10)
-			return true;
-		return false;
+
+		return num >= 0 && num < 10; //if true
 	}
 	
 	public void edit() {
@@ -142,7 +140,7 @@ public class Main extends Application{
 				boolean error = false;
 				for(int i=0; i<rowNumber.getValue(); i++) {
 					for(int j=0; j<colNumber.getValue(); j++) {
-						if(!isDigit(fields[i][j].getText())) 
+						if(!isDigit(fields[i][j].getText()))
 							error = true;
 					}
 				}
@@ -182,6 +180,7 @@ public class Main extends Application{
 		stage.show();
 	}
 	
+	@SuppressWarnings("NumberEquality")
 	public void compute() {
 		if(rowNumber.getValue() == colNumber.getValue()) {
 			new AlertBox("Matris Kare Olamaz");
@@ -196,7 +195,7 @@ public class Main extends Application{
 			loader.load();
 			root = loader.getRoot();
 			
-			MatrixScreenController controller = loader.<MatrixScreenController>getController();
+			MatrixScreenController controller = loader.getController();
 			controller.setMatrix(labels, rowNumber.getValue(), colNumber.getValue());
 			
 			Scene scene = new Scene(root);
